@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Smart Study Planner</h1>
+                </div>
+                <p>Organize your studies, achieve your goals</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Add New Task</h2>
+                    </div>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label for="task-title">Task Title</label>
+                            <input type="text" id="task-title" placeholder="e.g., Math Homework" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-subject">Subject</label>
+                            <select id="task-subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="math">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                                <option value="english">English</option>
+                                <option value="programming">Programming</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-deadline">Deadline</label>
+                            <input type="date" id="task-deadline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-priority">Priority</label>
+                            <select id="task-priority" required>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-notes">Notes (Optional)</label>
+                            <textarea id="task-notes" rows="3" placeholder="Additional details..."></textarea>
+                        </div>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Study Progress</h2>
+                    </div>
+                    <div class="progress-container">
+                        <p>Overall Completion: <span id="progress-percent">0%</span></p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <p>Total Tasks: <span id="total-tasks">0</span></p>
+                        <p>Completed: <span id="completed-tasks">0</span></p>
+                        <p>Pending: <span id="pending-tasks">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Your Study Tasks</h2>
+                        <div class="filter">
+                            <select id="task-filter">
+                                <option value="all">All Tasks</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                                <option value="high">High Priority</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="task-list" id="task-list">
+                        <li class="empty-state">
+                            <i class="fas fa-tasks"></i>
+                            <p>No tasks yet. Add your first study task!</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Weekly Calendar</h2>
+                    </div>
+                    <div class="calendar" id="calendar">
+                        <!-- Calendar will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        Task added successfully!
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
